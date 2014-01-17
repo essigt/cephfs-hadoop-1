@@ -71,12 +71,6 @@ public class CephFileSystem extends FileSystem {
   private TreeMap<Integer, String> datapools = null;
 
   /**
-   * Create a new CephFileSystem.
-   */
-  public CephFileSystem() {
-  }
-
-  /**
    * Create an absolute path using the working directory.
    */
   private Path makeAbsolute(Path path) {
@@ -84,6 +78,10 @@ public class CephFileSystem extends FileSystem {
       return path;
     }
     return new Path(workingDir, path);
+  }
+
+  public String getScheme() {
+    return "ceph";
   }
 
   public URI getUri() {
