@@ -88,6 +88,10 @@ public class CephFileSystem extends FileSystem {
     return uri;
   }
 
+  public int getDefaultPort() {
+    return 6789;
+  }
+
   /** {@inheritDoc} */
   @Override
   public void initialize(URI uri, Configuration conf) throws IOException {
